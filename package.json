@@ -1,0 +1,24 @@
+{
+  "name": "api-chat",
+  "version": "0.1.0",
+  "description": "API Chat con NodeJS y Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "API",
+    "Chat",
+    "NodeJS",
+    "Express"
+  ],
+  "author": "Gabriel López",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
