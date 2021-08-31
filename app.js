@@ -1,6 +1,11 @@
 const express = require("express");
 
+const db = require('./db');
 const router = require('./network/routes');
+
+const uri = 'mongodb://localhost:27017/api-chat';
+const options = {useNewUrlParser: true, useUnifiedTopology: true};
+db.connect(uri, options);
 
 const app = express();
 
