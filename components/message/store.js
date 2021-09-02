@@ -1,15 +1,15 @@
 const Model = require('./model');
 
 const addMessage = (message) => {
-	const myMessage = new Model(message);
-	myMessage.save();
+	const newMessage = new Model(message);
+	newMessage.save();
 }
 
-const getMessages = async (filterUser) => {
+const getMessages = async (filterChat) => {
 	return new Promise((resolve, reject) => {
 		let filter = {};
-		if (filterUser != null) {
-			filter = {user: filterUser};
+		if (filterChat != null) {
+			filter = {chat: filterChat};
 		}
 
 		Model.find(filter)
