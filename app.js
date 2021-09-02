@@ -11,6 +11,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use('/app', express.static('public'));
 
 router(app);
 
