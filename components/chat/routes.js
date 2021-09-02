@@ -6,7 +6,7 @@ const controller = require('./controller');
 const router = express.Router();
 
 router.post("/", (req, res) => {
-	controller.addUser(req.body.name)
+	controller.addChat(req.body.users)
 		.then((data) => {
 			response.success(req, res, data, 201);
 		})
@@ -15,13 +15,13 @@ router.post("/", (req, res) => {
 		});
 });
 
-router.get("/", (req, res) => {
-	controller.getUsers()
+router.get("/:userId", (req, res) => {
+	controller.getChats(req.params.userId)
 		.then((users) => {
 			response.success(req, res, users, 200);
 		})
 		.catch(e => {
-			response.error(req, res, 'Internal error', 500, e)
+			response.error(req, res, 'Internal Error', 500, e);
 		});
 });
 
