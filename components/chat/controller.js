@@ -1,15 +1,18 @@
 const store = require('./store');
 
 const addChat = (users) => {
-	if (!users || !Array.isArray(users)) {
-		return Promise.reject('Invalid user list');
-	}
+	return new Promise((resolve, reject) => {
+		if (!users || !Array.isArray(users)) {
+			reject('Invalid user list');
+		}
 
-	const chat = {
-		users: users,
-	}
+		const chat = {
+			users: users,
+		}
 
-	return store.add(chat);
+		store.add(chat);
+		resolve(chat);
+	});
 }
 
 const getChats = (userId) => {
